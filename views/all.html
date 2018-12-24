@@ -1,0 +1,10 @@
+<div class="task" ng-repeat="task in todoList" ng-class="{active : task.active}" ng-cloak >
+        <div class="check" ng-class="{done : !task.active}" >
+            <label>
+                <input type="checkbox" ng-model="task.active" ng-click="refreshTodolist()"><i class="fa fa-check"></i></div>
+            </label>
+        <div class="task-description" ng-class="{done : !task.active}">
+            {{task.description}}
+        </div>
+        <div class="delete"  ng-click="deleteTask($index)"><i class="fa fa-trash-o"></i></div>
+</div>

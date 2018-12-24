@@ -1,0 +1,478 @@
+/*=======================================================================
+GLOBAL STYLES============================================================
+=========================================================================*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box!important;
+
+}
+html,body{
+    min-height: 700px;
+    font-family: 'Roboto', sans-serif;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.clearfix:before,.clearfix:after{
+    content: "";
+    display: table;
+}
+.clearfix:after{
+    clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+
+/*=======================================================================
+BACKGROUND + CONTAINER STYLES============================================
+=========================================================================*/
+
+
+#bg{
+    width: 100%;
+    min-height: 650px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url(../images/desk.jpg);
+    background-position:center bottom;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#bg:after{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:#000;
+    opacity:.4;
+}
+
+
+#container{
+    max-width: 800px;
+    width: 95%;
+    min-height: 240px;
+    position: absolute;
+    top:150px;
+    left: 0;
+    right: 0;
+    margin:auto;
+    border-radius: 10px;
+    margin-bottom: 100px;
+}
+
+
+/*=======================================================================
+SECTION STYLES ==========================================================
+=========================================================================*/
+section{
+    box-shadow:0 10px 70px rgba(0,0,0,.8);
+}
+
+#container header{
+    width: 100%;
+    min-height: 100px;
+    height: 100px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    background: url(../images/desk.jpg);
+    background-position:center -130px;
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+}
+#container header:after{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background:#000;
+    opacity: .85;
+}
+header h1{
+    font-weight: lighter;
+    font-size:1.8rem;
+    color: #d79829;
+    z-index: 100;
+    text-transform: uppercase;
+    letter-spacing: 22px;
+    opacity: .8;
+}
+
+/*===========================FILTERS-LINK=========================*/
+#filter{
+    width: 100%;
+    height: 40px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align:center;;
+    -webkit-align-items:center;;
+    -ms-flex-align:center;;
+    align-items:center;;
+    background: #f4b649;
+    padding-left: 30px;
+}
+
+.filter-txt{
+    position: relative;
+    color: #d79829;
+}
+.filter-txt:after{
+    content: "";
+    width: 2px;
+    height: 20px;
+    position: absolute;
+    left: 50px;
+    background: #d79829;
+    opacity: .4;
+}
+.filter-link{
+    text-decoration: none;
+    margin-left: 40px;
+    color: #d79829;
+}
+.filter-link.active{
+    color: #fff;
+}
+
+/*============================INPUT-TASK===========================*/
+
+#input{
+    width: 100%;
+    height: 100px;
+}
+#chevron{
+    width:10%;
+    height: 100%;
+    float: left;
+    background: #edecec;
+    font-size: 30px;
+    color:#f4b649;
+    position: relative;
+}
+#chevron input[type="checkbox"]{
+    display: none;
+}
+#chevron label{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    -webkit-transition:all .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition:all .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.rotate{
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+}
+#container input#task-input{
+    width: 90%;
+    height: 100px;
+    float: left;
+    border: none;
+    outline: none;
+    background: #edecec;
+    font-size: 30px;
+    padding: 0 20px 0 0;
+}
+::-webkit-input-placeholder {
+   color: #d8d7d7;
+   font-style: italic;
+}
+:-moz-placeholder {
+   color: #d8d7d7;
+   font-style: italic;
+}
+::-moz-placeholder {
+   color: #d8d7d7;
+   font-style: italic;
+}
+:-ms-input-placeholder {
+   color: #d8d7d7;
+   font-style: italic;
+}
+
+/*=======================================================================
+TASK STYLES =============================================================
+=========================================================================*/
+
+
+.task{
+    width: 100%;
+    position: relative;
+    background: #fff;
+    -webkit-transition:all .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition:all .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.task.active{
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.25);
+    -webkit-transform:scaleX(1.06);
+    transform: scaleX(1.06);
+    z-index: 1000;
+}
+.task:not(.active):last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
+}
+.task:after{
+    content:"";
+    width: 200px;
+    height: 1px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -110px;
+    background:rgba(0, 0, 0, 0.04);
+}
+.task:last-child{
+    margin-bottom: 100px;
+    }
+.task:last-child:after{
+    display: none;
+}
+.check{
+    width: 10%;
+    min-width: 50px;
+    min-height: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 25px;
+    color:#d8d7d7;
+}
+.check.done{
+    color:#f4b649;
+}
+.task-description{
+    width: 80%;
+    margin-left: 10%;
+    min-height: 60px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding:20px 0;
+    overflow: hidden;
+    font-size: 20px;
+    color: #343434;
+}
+
+.task-description.done{
+    text-decoration: line-through;
+    color: #cecece;
+}
+.delete{
+    width: 10%;
+    min-height: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 25px;
+    color:#d8d7d7;
+}
+.check label{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.check label,.delete{
+    cursor: pointer;
+}
+
+.delete:hover{
+    color:red;
+}
+.check input[type="checkbox"]{
+    display: none;
+}
+
+/*=======================================================================
+ANGULAR-STYLES ==========================================================
+=========================================================================*/
+ng-view{
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+.animate{
+    -webkit-transition:all .3s ease-in;
+    -moz-transition:all .3s ease-in;
+    -o-transition:all .3s ease-in;
+    transition:all .3s ease-in;
+}
+.animate.ng-enter{
+    opacity: 0;
+}
+
+.animate.ng-enter.ng-enter-active{
+    opacity: 1;
+}
+.animate.ng-leave{
+    opacity: 1;
+}
+
+.animate.ng-leave.ng-leave-active{
+    opacity: 0;
+}
+
+/*=======================================================================
+MEDIA QUERIES ===========================================================
+=========================================================================*/
+@media only screen and (max-width:600px) {
+    header h1{
+        font-size: 1.5rem;
+        letter-spacing: 15px;
+    }
+    #input{
+        height: 60px;
+    }
+    #container input#task-input{
+        height: 60px;
+        font-size:1.5rem;
+        padding: 0 20px 0 10px;
+    }
+    #filter{
+        font-size: .9rem;
+    }
+    #chevron{
+            font-size: 25px;
+    }
+    .task.active{
+        -webkit-transform:scaleX(1.02);
+        -moz-transform: scaleX(1.02);
+        -o-transform: scaleX(1.02);
+        transform: scaleX(1.02);
+    }
+    .check{
+        font-size: 20px;
+    }
+    .task-description{
+        padding: 20px 0 20px 10px;
+        font-size: 1rem;
+    }
+    .delete{
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width:430px) {
+    #container{
+        width: 98%;
+    }
+    header{
+        background-position:center center!important;
+    }
+    header h1{
+        font-size: 1.2rem;
+        letter-spacing: 5px;
+    }
+    #input{
+        height: 60px;
+    }
+    #container input#task-input{
+        height: 60px;
+        font-size:1.1rem;
+        padding: 0 20px 0 10px;
+    }
+    #filter{
+        font-size: .8rem;
+    }
+
+    .filter-txt:after {
+        display: none;
+    }
+    .filter-link{
+            margin-left: 25px;
+    }
+    .check{
+        font-size: 15px;
+    }
+    .task-description{
+        padding: 20px 0 20px 10px;
+        font-size: 1rem;
+    }
+    .delete{
+        font-size: 15px;
+    }
+}
